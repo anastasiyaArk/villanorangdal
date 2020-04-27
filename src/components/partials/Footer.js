@@ -22,7 +22,7 @@ export default class Footer extends Component {
                         <div>mail@norangdal.com</div>
                     </div>
                     <div class="col-md-3 my-3 follow-footer">
-                        <h5>Følg oss</h5>
+                        {/* <h5>Følg oss</h5>
                         <a href="https://instagram.com/villanorangdal" target="_blank">
                             <instagram></instagram>
                         </a>
@@ -31,7 +31,7 @@ export default class Footer extends Component {
                         </a>
                         <a href="https://www.tripadvisor.com/Hotel_Review-g1509004-d1501470-Reviews-Villa_Norangdal-Hellesylt_Stranda_More_og_Romsdal_Western_Norway.html" target="_blank">
                             <tripadvisor></tripadvisor>
-                        </a>
+                        </a> */}
                     </div>
                     <div class="col-md-3 pt-3">
                         <a class="float-right" href="http://www.olavsrosa.no" target="_blank">

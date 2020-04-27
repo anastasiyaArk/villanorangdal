@@ -1,19 +1,16 @@
 // Dependencies
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import loadable from "@loadable/component";
 
 // Assets
 import NorangdalVillaLogo from 'assets/images/Logo.png'
 
 // Actions // Actions
-import {getLanguageSlug} from 'actions/LanguageActions';
+import { getLanguageSlug } from 'actions/LanguageActions';
 
-// Routes
-import Activities from '../routes/Activities';
-import Booking from '../routes/Booking';
-import Gallery from '../routes/Gallery';
-import Hotel from '../routes/Hotel';
-import Room from '../routes/Room';
+
 
 class NavigationBar extends Component {
 
@@ -23,14 +20,38 @@ class NavigationBar extends Component {
                 <span>
                     <img src={NorangdalVillaLogo} alt="Norangdal Villa logo" />
                 </span>
-         
-            <ul>
-                <Hotel/>
-                <Room/>
-                <Activities/>
-                <Gallery/>
-                <Booking/>
-            </ul>
+                <ul>
+                    <li>
+                        <NavLink to={`/home/`} title='Home'>
+                            Home
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to={`/hotel/`} title='Hotel'>
+                            HOTELLET
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to={`/room/`} title='Room'>
+                            ROM
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to={`/activities/`} title='Activities'>
+                            AKTIVITETER
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to={`/gallery/`} title='Gallery'>
+                            GALERI
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to={`/booking/`} title='Booking'>
+                            BOOKING
+                </NavLink>
+                    </li>
+                </ul>
             </div>
         )
     }
