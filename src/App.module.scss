@@ -1,0 +1,9 @@
+:local(.container) {
+    position: absolute;
+    height: calc(100% - 56px);
+    @media (min-width: $screen-sm) {
+      height: calc(100% - 64px);
+    }
+    overflow-y: scroll;
+    width: 100%;
+  }

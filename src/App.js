@@ -4,13 +4,13 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 
-import {library} from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faFacebookF,
   faInstagram,
   faTripadvisor
 } from '@fortawesome/free-brands-svg-icons'
-import {faGripHorizontal, faListUl, faLanguage, faChevronDown, faPhotoVideo, faMusic, faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faGripHorizontal, faListUl, faLanguage, faChevronDown, faPhotoVideo } from '@fortawesome/free-solid-svg-icons'
 
 // Components
 import Footer from 'components/partials/Footer'
@@ -25,11 +25,14 @@ import Booking from 'components/routes/Booking'
 // Utils
 import configureStore, { history } from 'utils/configureStore'
 
+// Stylesheets
+import style from 'App.module.scss';
+
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__PRELOADED_STATE__;
 const initialState = {};
 
-library.add(faFacebookF, faInstagram, faTripadvisor, faGripHorizontal, faListUl, faLanguage, faChevronDown, faSearch, faMusic, faPhotoVideo)
+library.add(faFacebookF, faInstagram, faTripadvisor, faGripHorizontal, faListUl, faLanguage, faChevronDown, faPhotoVideo)
 
 const store = configureStore(preloadedState || initialState)
 
@@ -39,8 +42,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <div>
-            <NavigationBar />
+          <NavigationBar />
+          <div className={style.container}>
             <Switch>
               <Route exact={true} strict={true} path="/home/" render={() => (<Home />)} />
               <Route exact={true} strict={true} path="/activities/" render={() => (<Activities />)} />
