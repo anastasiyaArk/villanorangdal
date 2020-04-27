@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
-import loadable from "@loadable/component";
+
 
 // Assets
 import NorangdalVillaLogo from 'assets/images/Logo.png'
