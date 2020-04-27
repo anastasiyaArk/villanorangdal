@@ -1,0 +1,35 @@
+@import "../abstracts/_all.scss";
+
+// @include scrollbar(14px, #e0e1e2, transparent, 0)
+
+body{
+	background-color: $body-background;
+	color: $default-text-color;
+	font-family: $default-font;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+a{
+	color: $primary-color;
+	cursor: pointer;
+	&:hover{
+		color: hover-color($primary-color);
+	}
+	&:focus{
+		color: focus-color($primary-color);
+	}
+}
+
+p {
+	line-height: 1.43em;
+}
+
+.padding {
+	padding: 24px;
+}
+
+.padding-sm {
+	@media (min-width: $screen-sm) {
+		padding: 24px;
+  }
+}
