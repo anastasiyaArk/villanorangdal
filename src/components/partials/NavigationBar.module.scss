@@ -1,0 +1,67 @@
+@import "../../style/abstracts/all";
+
+:local(.navigationBar) {
+    @include box-shadow(
+        0 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12)
+    );
+    background-color: #212529;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: $screen-sm) {
+        height: 64px;
+    }
+    :local(.appLogo) {
+        padding: 8px 12px;
+        width: 100%;
+        display: block;
+        size: inherit;
+    }
+ 
+}
+:local(.navigationBarLinks) {
+    padding: 0;
+    margin: auto;
+
+    li {
+        display: inline;
+        left: 50%;
+        transform: translatex(-50%);
+        a {
+            @include transition(background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms);
+            display: inline;
+            padding: 6px 8px 6px 24px;
+            line-height: 1.75;
+            color: #fff;
+
+            &:focus,
+            &:hover {
+                color: $primary-color;
+            }
+
+            &:active {
+                color: $primary-color;
+            }
+
+            &:local(.activeLink) {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+:local(.languageSelectorListContainer) {
+    width: 78px;
+    @media (min-width: $screen-sm) {
+      width: 145px;
+    }
+    > span {
+      float: right;
+    }
+  }
