@@ -1,7 +1,7 @@
 // Dependencies
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 
 // Assets
 import { ReactComponent as NorangdalVillaLogo } from 'assets/images/logo.svg'
@@ -9,50 +9,41 @@ import { ReactComponent as NorangdalVillaLogo } from 'assets/images/logo.svg'
 // Styles
 import style from 'components/partials/NavigationBar.module.scss'
 
-// Actions // Actions
-import { getLanguageSlug } from 'actions/LanguageActions';
+// Actions 
+import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from '../../actions/LanguageActions';
 
 
 class NavigationBar extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            
+        this.setLanguageSelectorListWrapperRef = this.setLanguageSelectorListWrapperRef.bind(this);
+    }
+
+
+    renderLanguageSelectorButton(availableLanguages, multilingualRoutes, selectedLanguageKey) {
+        console.log(multilingualRoutes);
+        const hasAvailableLanguages = availableLanguages && Object.keys(availableLanguages).length;
+        const hasMultilingualRoutes = multilingualRoutes && Object.keys(multilingualRoutes).length;
+        if (hasAvailableLanguages && hasMultilingualRoutes) {
+            const languageElements = Object.keys(availableLanguages).map(languageKey => {
+                const language = availableLanguages[languageKey];
+                const isActive = languageKey === selectedLanguageKey;
+                return (<li key={languageKey}>
+                    <a href="#" title={language.name} className={isActive
+                        ? style.activeLink
+                        : ''}>{language.name}</a>
+                </li>)
+            });
+            return (<ul>{languageElements}</ul>);
+        } else {
+            return '';
         }
     }
 
-    renderLanguageSelectorButton(availableLanguages, selectedLanguageKey) {
-        const hasAvailableLanguages = availableLanguages && Object.keys(availableLanguages).length;
-        if (hasAvailableLanguages) {
-          const selectedLanguage = availableLanguages[selectedLanguageKey];
-          return (
-            <span className={style.languageSelectorButton}>
-              <span className={style.languageName}>{selectedLanguage && selectedLanguage.name ? selectedLanguage.name : ''}</span>
-            </span>);
-        } else
-          return '';
-        }
+    setLanguageSelectorListWrapperRef(node) {
+        this.languageSelectorListWrapperRef = node;
+    }
 
-        renderLanguageSelectorList(availableLanguages, multilingualRoutes, selectedLanguageKey) {
-            const hasAvailableLanguages = availableLanguages && Object.keys(availableLanguages).length;
-            const hasMultilingualRoutes = multilingualRoutes && Object.keys(multilingualRoutes).length;
-            if (hasAvailableLanguages && hasMultilingualRoutes) {
-              const languageElements = Object.keys(availableLanguages).map(languageKey => {
-                const language = availableLanguages[languageKey];
-                const path = multilingualRoutes[languageKey].path;
-                const isActive = languageKey === selectedLanguageKey;
-                return (<li key={languageKey}>
-                  <a href={path} title={language.name} className={isActive
-                      ? style.activeLink
-                      : ''}>{language.name}</a>
-                </li>)
-              });
-              return (<ul>{languageElements}</ul>);
-            } else {
-              return '';
-            }
-          }
-   
     render() {
         return (
             <div className={style.navigationBar}>
@@ -89,10 +80,8 @@ class NavigationBar extends Component {
                     </li>
                 </ul>
                 <div className={style.languageSelectorListContainer}>
-                    <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorList} ${this.state.showLanguageSelectorList
-                        ? style.active
-                        : ''}`}>
-                        {this.renderLanguageSelectorList(this.props.availableLanguages, this.props.multilingualRoutes, this.props.selectedLanguageKey)}
+                    <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorList}`}>
+                        {this.renderLanguageSelectorButton(this.props.availableLanguages, this.props.multilingualRoutes, this.props.selectedLanguageKey)}
                     </div>
                 </div>
             </div>
@@ -100,7 +89,17 @@ class NavigationBar extends Component {
     }
 }
 
-export default NavigationBar
+const mapStateToProps = state => ({
+    availableLanguages: state.availableLanguages,
+    multilingualRoutes: state.multilingualRoutes,
+    selectedLanguageKey: state.selectedLanguageKey
+});
+
+const mapDispatchToProps = {
+    getLanguageSlug
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
 
 
 

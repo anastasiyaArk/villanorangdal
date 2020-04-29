@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
+import loadable from "@loadable/component";
+import { PrerenderedComponent } from "react-prerendered-component";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -15,18 +17,29 @@ import { faGripHorizontal, faListUl, faLanguage, faChevronDown, faPhotoVideo } f
 // Components
 import Footer from 'components/partials/Footer'
 import NavigationBar from 'components/partials/NavigationBar'
-import Home from 'components/routes/Home'
-import Activities from 'components/routes/Activities'
-import Hotel from 'components/routes/Hotel'
-import Room from 'components/routes/Room'
-import Gallery from 'components/routes/Gallery'
-import Booking from 'components/routes/Booking'
 
 // Utils
 import configureStore, { history } from 'utils/configureStore'
 
 // Stylesheets
 import style from 'App.module.scss';
+
+const prerenderedLoadable = dynamicImport => {
+  const LoadableComponent = loadable(dynamicImport);
+  return React.memo(props => (
+    <PrerenderedComponent live={LoadableComponent.load()}>
+      <LoadableComponent {...props} />
+    </PrerenderedComponent>
+  ));
+};
+
+const Home = prerenderedLoadable(() => import("./components/routes/Home"));
+const Hotel = prerenderedLoadable(() => import("./components/routes/Hotel"));
+const Activities = prerenderedLoadable(() => import("./components/routes/Activities"));
+const Room = prerenderedLoadable(() => import("./components/routes/Room"));
+const Gallery = prerenderedLoadable(() => import("./components/routes/Gallery"));
+const Booking = prerenderedLoadable(() => import("./components/routes/Booking"));
+//const NotFound = prerenderedLoadable(() => import("./components/routes/NotFound"));
 
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__PRELOADED_STATE__;
@@ -45,12 +58,25 @@ class App extends Component {
           <NavigationBar />
           <div className={style.container}>
             <Switch>
-              <Route exact={true} strict={true} path="/home/" render={() => (<Home />)} />
               <Route exact={true} strict={true} path="/activities/" render={() => (<Activities />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/activities/" render={(props) => (<Activities {...props} />)} />
+
               <Route exact={true} strict={true} path="/hotel/" render={() => (<Hotel />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/hotel/" render={(props) => (<Hotel {...props} />)} />
+
               <Route exact={true} strict={true} path="/room/" render={() => (<Room />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/room/" render={(props) => (<Room {...props} />)} />
+
               <Route exact={true} strict={true} path="/gallery/" render={() => (<Gallery />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/gallery/" render={(props) => (<Gallery {...props} />)} />
+
               <Route exact={true} strict={true} path="/booking/" render={() => (<Booking />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/booking/" render={(props) => (<Booking {...props} />)} />
+
+              <Route exact={true} strict={true} path="/:selectedLanguage/" render={(props) => (<Home {...props} />)} />
+              <Route exact={true} strict={true} path="/" render={() => (<Home />)} />
+
+
             </Switch>
             <Footer />
           </div>
