@@ -1,0 +1,38 @@
+@import "../../style/abstracts/all";
+
+:local(.footer){
+    background-color: $dark-background;
+    
+    :local(.contentSection) {
+        max-width: 1200px;
+        padding: 16px;
+        margin: auto;
+        flex: 1;
+    
+        :local(.map) {
+          margin: 0;
+    
+          img {
+            width: 100%;
+          }
+        }
+    
+        :local(.grid) {
+          @media (min-width: $screen-md) {
+            display: flex;
+          }
+    
+          :local(.textSection) {
+            @media (min-width: $screen-md) {
+              flex: 1;
+            }
+          }
+    
+          :local(.mapSection) {
+            @media (min-width: $screen-md) {
+              flex: 2;
+            }
+          }
+        }
+      }
+}
