@@ -28,8 +28,9 @@ class NavigationBar extends Component {
             const languageElements = Object.keys(availableLanguages).map(languageKey => {
                 const language = availableLanguages[languageKey];
                 const isActive = languageKey === selectedLanguageKey;
+                const path = multilingualRoutes[languageKey].path;
                 return (<li key={languageKey}>
-                    <a href="#" title={language.name} className={isActive
+                    <a href={path} title={language.name} className={isActive
                         ? style.activeLink
                         : ''}>{language.name}</a>
                 </li>)
@@ -47,35 +48,35 @@ class NavigationBar extends Component {
     render() {
         return (
             <div className={style.navigationBar}>
-                <Link to={`/home/`} aria-label='Link Villa Norangdal home page' title='Link Villa Noranngdal home page'>
+                <Link to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}`} aria-label='Link Villa Norangdal home page' title='Link Villa Noranngdal home page'>
                     <span className={style.appLogo}>
                         <NorangdalVillaLogo alt="Villa Norangdal logo" width="30" height="40" />
                     </span>
                 </Link>
                 <ul className={style.navigationBarLinks}>
                     <li>
-                        <NavLink to={`/hotel/`} activeClassName={style.activeLink} title='Hotel'>
-                            Hotellet
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}hotel/`} activeClassName={style.activeLink} title={this.props.selectedLanguageKey === 'en' ? 'Hotell' : 'Hotel'}>
+                            {this.props.selectedLanguageKey === 'en' ? 'Hotel' : 'Hotell'}
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/room/`} activeClassName={style.activeLink} title='Room'>
-                            Rom
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}room/`} activeClassName={style.activeLink} title='Room'>
+                            {this.props.selectedLanguageKey === 'en' ? 'Room' : 'Rom'}
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/activities/`} activeClassName={style.activeLink} title='Activities'>
-                            Aktiviteter
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}activities/`} activeClassName={style.activeLink} title='Activities'>
+                            {this.props.selectedLanguageKey === 'en' ? 'Activities' : 'Aktiviteter'}
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/gallery/`} activeClassName={style.activeLink} title='Gallery'>
-                            Galleri
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}gallery/`} activeClassName={style.activeLink} title='Gallery'>
+                            {this.props.selectedLanguageKey === 'en' ? 'Gallery' : 'Galleri'}
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/booking/`} activeClassName={style.activeLink} title='Booking'>
-                            Booking
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}booking/`} activeClassName={style.activeLink} title='Booking'>
+                            {this.props.selectedLanguageKey === 'en' ? 'Booking' : 'Booking'}
                         </NavLink>
                     </li>
                 </ul>
