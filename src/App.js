@@ -12,7 +12,7 @@ import {
   faInstagram,
   faTripadvisor
 } from '@fortawesome/free-brands-svg-icons'
-import { faGripHorizontal, faListUl, faLanguage, faChevronDown, faPhotoVideo } from '@fortawesome/free-solid-svg-icons'
+import { faHeart} from '@fortawesome/free-regular-svg-icons'
 
 // Components
 import Footer from 'components/partials/Footer'
@@ -44,7 +44,7 @@ const Booking = prerenderedLoadable(() => import("./components/routes/Booking"))
 const preloadedState = window.__PRELOADED_STATE__;
 const initialState = {};
 
-library.add(faFacebookF, faInstagram, faTripadvisor, faGripHorizontal, faListUl, faLanguage, faChevronDown, faPhotoVideo)
+library.add(faFacebookF, faInstagram, faTripadvisor, faHeart)
 
 const store = configureStore(preloadedState || initialState)
 
