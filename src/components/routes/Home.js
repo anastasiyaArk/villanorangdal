@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey} from 'actions/LanguageActions';
 
 // Components
-import SocialMediaLinks from '../partials/SocialMediaLinks'
+import Carousel from '../partials/Carousel';
 
 // Styles
 import style from 'components/routes/Home.module.scss'
@@ -30,7 +30,7 @@ class Home extends Component {
     render() {
         return (
             <div class="card col-md-6">
-                <SocialMediaLinks/>
+              <Carousel />
                 <img class="card-img-top" src="../assets/images/villa.jpg" alt="Villa Norangdal" />
                 <div class="card-body text-center">
                     <h5 class="card-title">Velkommen til Villa Norangdal</h5>
