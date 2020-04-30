@@ -36,7 +36,6 @@ const prerenderedLoadable = dynamicImport => {
 const Home = prerenderedLoadable(() => import("./components/routes/Home"));
 const Hotel = prerenderedLoadable(() => import("./components/routes/Hotel"));
 const Activities = prerenderedLoadable(() => import("./components/routes/Activities"));
-const Room = prerenderedLoadable(() => import("./components/routes/Room"));
 const Gallery = prerenderedLoadable(() => import("./components/routes/Gallery"));
 const Booking = prerenderedLoadable(() => import("./components/routes/Booking"));
 //const NotFound = prerenderedLoadable(() => import("./components/routes/NotFound"));
@@ -63,9 +62,6 @@ class App extends Component {
 
               <Route exact={true} strict={true} path="/hotel/" render={() => (<Hotel />)} />
               <Route exact={true} strict={true} path="/:selectedLanguage/hotel/" render={(props) => (<Hotel {...props} />)} />
-
-              <Route exact={true} strict={true} path="/room/" render={() => (<Room />)} />
-              <Route exact={true} strict={true} path="/:selectedLanguage/room/" render={(props) => (<Room {...props} />)} />
 
               <Route exact={true} strict={true} path="/gallery/" render={() => (<Gallery />)} />
               <Route exact={true} strict={true} path="/:selectedLanguage/gallery/" render={(props) => (<Gallery {...props} />)} />

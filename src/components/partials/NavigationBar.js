@@ -19,7 +19,6 @@ class NavigationBar extends Component {
         this.setLanguageSelectorListWrapperRef = this.setLanguageSelectorListWrapperRef.bind(this);
     }
 
-
     renderLanguageSelectorButton(availableLanguages, multilingualRoutes, selectedLanguageKey) {
         console.log(multilingualRoutes);
         const hasAvailableLanguages = availableLanguages && Object.keys(availableLanguages).length;
@@ -56,12 +55,7 @@ class NavigationBar extends Component {
                 <ul className={style.navigationBarLinks}>
                     <li>
                         <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}hotel/`} activeClassName={style.activeLink} title={this.props.selectedLanguageKey === 'en' ? 'Hotell' : 'Hotel'}>
-                            {this.props.selectedLanguageKey === 'en' ? 'Hotel' : 'Hotell'}
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}room/`} activeClassName={style.activeLink} title='Room'>
-                            {this.props.selectedLanguageKey === 'en' ? 'Room' : 'Rom'}
+                            {this.props.selectedLanguageKey === 'en' ? 'Hotellet' : 'Hotell'}
                         </NavLink>
                     </li>
                     <li>

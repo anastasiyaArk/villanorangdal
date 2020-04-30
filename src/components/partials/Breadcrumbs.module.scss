@@ -1,0 +1,31 @@
+:local(.breadcrumbs) {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        display: inline-block;
+  
+        a,
+        span {
+          color: rgba(0, 0, 0, 0.54);
+        }
+  
+        &:last-child {
+          a,
+          span {
+            color: rgba(0, 0, 0, 0.87);
+          }
+        }
+  
+        &:not(:last-child):after {
+          display: inline-block;
+          content: ' | ';
+          margin: 0 8px;
+          color: rgba(0, 0, 0, 0.54);
+        }
+      }
+    }
+  }
+  
