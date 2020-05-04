@@ -1,6 +1,7 @@
 // Dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Form, FormGroup, FormLabel, Button} from 'react-bootstrap';
 
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
@@ -15,54 +16,42 @@ class BookingForm extends Component {
                         'forespørsel så raskt som mulig.'}</p>
                     <p>{this.props.selectedLanguageKey === 'en' ? 'At this moment we propose rental only for the whole hotel for kr XXXX' : 'Vi tilbyr for tiden kun utleie av hele hotellet til en døgnpris på XXXX kr. '}</p>
                 </div>
-                <form>
+                <Form>
 
-                    <div class="form-group row">
-                        <label for="example-datetime-local-input" class="col-2 col-form-label">{this.props.selectedLanguageKey === 'en' ? 'From' : 'Fra dato'}</label>
-                        <div class="col-10">
-                            <input class="form-control" type="datetime-local" value="" id="example-datetime-local-input" />
-                        </div>
-                        <label for="example-datetime-local-input" class="col-2 col-form-label">{this.props.selectedLanguageKey === 'en' ? 'To' : 'Til dato'}</label>
-                        <div class="col-10">
-                            <input class="form-control" type="datetime-local" value="" id="example-datetime-local-input" />
-                        </div>
-                    </div>
+                    <FormGroup>
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'From' : 'Fra dato'}</FormLabel>
+                        <Form.Control type="date" />
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'To' : 'Til dato'}</FormLabel>
+                        <Form.Control type="date" />
+                    </FormGroup>
 
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">{this.props.updateSelectedLanguageKey === 'en' ? 'First name' : 'Fornavn'}</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" value={this.props.selectedLanguageKey === 'en' ? 'First name' : 'Fornavn'} id="example-text-input" />
-                        </div>
-                    </div>
+                    <FormGroup>
+                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'First name' : 'Fornavn'}</FormLabel>
+                        <Form.Control type="text" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'First name' : 'Fornavn'} />
+                    </FormGroup>
 
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">{this.props.updateSelectedLanguageKey === 'en' ? 'Second name name' : 'Etternavn'}</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" value={this.props.updateSelectedLanguageKey === 'en' ? 'Second name name' : 'Etternavn'} id="example-text-input" />
-                        </div>
-                    </div>
+                    <FormGroup>
+                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'Second name name' : 'Etternavn'}</FormLabel>
+                        <Form.Control type="text" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'Second name name' : 'Etternavn'} />
+                    </FormGroup>
 
-                    <div class="form-group row">
-                        <label for="example-email-input" class="col-2 col-form-label">{this.props.updateSelectedLanguageKey === 'en' ? 'Email' : 'E-post'}</label>
-                        <div class="col-10">
-                            <input class="form-control" type="email" value={this.props.updateSelectedLanguageKey === 'en' ? 'Email' : 'E-post'} id="example-email-input" />
-                        </div>
-                    </div>
+                    <FormGroup>
+                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'Email' : 'E-post'}</FormLabel>
+                        <Form.Control type="email" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'Email' : 'E-post'} />
+                    </FormGroup>
 
-                    <div class="form-group row">
-                        <label for="example-tel-input" class="col-2 col-form-label">{this.props.updateSelectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'}</label>
-                        <div class="col-10">
-                            <input class="form-control" type="tel" value={this.props.updateSelectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'} id="example-tel-input" />
-                        </div>
-                    </div>
+                    <FormGroup>
+                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'}</FormLabel>
+                        <Form.Control type="text" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'} />
+                    </FormGroup>
 
-                    <div class="form-group row">
-                        <label for="exampleTextarea">{this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'}</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                    </div>
+                    <FormGroup>
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'}</FormLabel>
+                        <Form.Control type="textarea" placeholder={this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'} />
+                    </FormGroup>
 
-                    <button type="submit" className="btn btn-primary">{this.selectedLanguageKey === 'en' ? 'Send request' : 'Send forespørsel'}</button>
-                </form>
+                    <Button variant="primary" type="submit">{this.selectedLanguageKey === 'en' ? 'Send request' : 'Send forespørsel'}</Button>
+                </Form>
             </div>
         )
     }
@@ -77,3 +66,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookingForm);
+
+
+
