@@ -1,9 +1,13 @@
 // Dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 // Components
 import Breadcrumbs from 'components/partials/Breadcrumbs';
+import BookingForm from 'components/partials/BookingForm';
+
 
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
@@ -23,28 +27,30 @@ class Booking extends Component {
   render() {
     const listGalleryPage = {
       title: {
-        en: 'Activities | Villa Norangdal',
-        no: 'Aktiviteter | Villa Norangdal'
+        en: 'Booking | Villa Norangdal',
+        no: 'Booking | Villa Norangdal'
       },
       heading: {
-        en: 'Activities',
-        no: 'Aktiviteter'
+        en: 'Booking',
+        no: 'Booking'
       },
       description: {
-        en: 'Activities at Villa Norangdal',
-        no: 'Villa Norangdal aktiviteter'
+        en: 'Booking for Villa Norangdal',
+        no: 'Villa Norangdal booking'
       }
     }
 
     let breadcrumbs = [
       {
         name: listGalleryPage.heading[this.props.selectedLanguageKey],
-        path: `/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}activities/`
+        path: `/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}booking/`
       }
     ];
     return (
       <div><div>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
+    <h4>{this.props.selectedLanguageKey === 'en' ? 'Booking' : 'Booking'}</h4>
+    <div><FontAwesomeIcon icon={['fas', 'hotel']} alt={this.props.selectedLanguageKey === 'en' ? 'Hotel logo' : 'Hotell logo'} /></div>
       </div>
         <div class="card-deck">
           <div class="card col-md-8">
@@ -53,64 +59,7 @@ class Booking extends Component {
               forespørsel så raskt som mulig.
           <p>Vi tilbyr for tiden kun utleie av hele hotellet til en døgnpris på XXXX kr. </p>
               </p>
-              <form>
-                {/* <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" checked id="hotel" disabled>
-            <label class="form-check-label" for="hotel">
-              Hele hotellet 12000,-
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="singleroom" disabled>
-            <label class="form-check-label" for="singleroom">
-              Enkeltrom 1575,-
-            </label>
-          </div>
-          <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" value="" id="doubleroom" disabled>
-            <label class="form-check-label" for="doubleroom">
-              Dobbeltrom 2150,-
-            </label>
-          </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault02">Fra dato</label>
-              <input type="date" class="form-control" id="validationDefault02" placeholder="Fra dato" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault02">Til dato</label>
-              <input type="date" class="form-control" id="validationDefault02" placeholder="Til dato" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault01">Fornavn</label>
-              <input type="text" class="form-control" id="validationDefault01" placeholder="Fornavn" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault06">Etternavn</label>
-              <input type="text" class="form-control" id="validationDefault06" placeholder="Etternavn" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault03">E-post</label>
-              <input type="text" class="form-control" id="validationDefault03" placeholder="E-post" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault04">Telefonnummer</label>
-              <input type="text" class="form-control" id="validationDefault04" placeholder="Telefonnummer">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-8 mb-3">
-              <label for="validationDefault05">Kommentar</label>
-              <input type="textarea" class="form-control" id="validationDefault05" placeholder="Eventuelle kommentarer/spørsmål">
-              <textarea class="form-control" id="validationDefault05" placeholder="Eventuelle kommentarer/spørsmål" rows="3"></textarea>
-            </div>
-          </div>
-          <button class="btn btn-primary float-right" type="submit">Send forespørsel</button> */}
-              </form>
+            <BookingForm/>
             </div>
           </div>
           <div class="card col-md-4 payment-info">

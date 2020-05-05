@@ -26,23 +26,23 @@ class BookingForm extends Component {
                     </FormGroup>
 
                     <FormGroup>
-                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'First name' : 'Fornavn'}</FormLabel>
-                        <Form.Control type="text" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'First name' : 'Fornavn'} />
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'First name' : 'Fornavn'}</FormLabel>
+                        <Form.Control type="text" placeholder={this.props.selectedLanguageKey === 'en' ? 'First name' : 'Fornavn'} />
                     </FormGroup>
 
                     <FormGroup>
-                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'Second name name' : 'Etternavn'}</FormLabel>
-                        <Form.Control type="text" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'Second name name' : 'Etternavn'} />
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Second name' : 'Etternavn'}</FormLabel>
+                        <Form.Control type="text" placeholder={this.props.selectedLanguageKey === 'en' ? 'Second name' : 'Etternavn'} />
                     </FormGroup>
 
                     <FormGroup>
-                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'Email' : 'E-post'}</FormLabel>
-                        <Form.Control type="email" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'Email' : 'E-post'} />
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Email' : 'E-post'}</FormLabel>
+                        <Form.Control type="email" placeholder={this.props.selectedLanguageKey === 'en' ? 'Email' : 'E-post'} />
                     </FormGroup>
 
                     <FormGroup>
-                        <FormLabel>{this.props.updateSelectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'}</FormLabel>
-                        <Form.Control type="text" placeholder={this.props.updateSelectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'} />
+                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'}</FormLabel>
+                        <Form.Control type="text" placeholder={this.props.selectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'} />
                     </FormGroup>
 
                     <FormGroup>

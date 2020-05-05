@@ -1,6 +1,7 @@
 @import "./style/abstracts/_all.scss";
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 
+
 :local(.container) {
     position: absolute;
     height: calc(100% - 56px);

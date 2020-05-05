@@ -5,14 +5,17 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import loadable from "@loadable/component";
 import { PrerenderedComponent } from "react-prerendered-component";
+import WebFont from 'webfontloader';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebookF,
   faInstagram,
   faTripadvisor
-} from '@fortawesome/free-brands-svg-icons'
-import { faHeart} from '@fortawesome/free-regular-svg-icons'
+} from '@fortawesome/free-brands-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faSkiingNordic, faHotel } from '@fortawesome/free-solid-svg-icons';
+
 
 // Components
 import Footer from 'components/partials/Footer'
@@ -44,7 +47,13 @@ const Booking = prerenderedLoadable(() => import("./components/routes/Booking"))
 const preloadedState = window.__PRELOADED_STATE__;
 const initialState = {};
 
-library.add(faFacebookF, faInstagram, faTripadvisor, faHeart)
+WebFont.load({
+  google: {
+    families: ['Roboto:400,700&display=swap']
+  }
+});
+
+library.add(faFacebookF, faInstagram, faTripadvisor, faHeart, faSkiingNordic, faHotel)
 
 const store = configureStore(preloadedState || initialState)
 
