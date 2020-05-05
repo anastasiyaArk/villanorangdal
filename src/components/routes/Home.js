@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
 
 // Components
-import Carousel from 'components/partials/Carousel';
 import BookingForm from 'components/partials/BookingForm'
 
 // Styles
@@ -32,7 +31,6 @@ class Home extends Component {
   render() {
     return (
       <div class="card col-md-6">
-        <Carousel />
         <div class="card-body text-center">
           <h5 class="card-title">{this.props.selectedLanguageKey === 'en' ? 'In the very heart of Sunnmørsalpene!' : 'Midt i hjertet av Sunnmørsalpene!'}</h5>
           <div><FontAwesomeIcon icon={['far', 'heart']} alt='Tripadvisor logo' /></div>
