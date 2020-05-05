@@ -1,0 +1,28 @@
+@import "../../style/abstracts/all";
+
+:local(.container) {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+   
+}
+
+:local(.imageOverlay) {
+    background-color: rgba(97, 96, 93, 0.35);
+    display: flex;
+    position: absolute;
+    padding: 16px 24px;
+
+    :local(.imageOverlayText) {
+        line-height: 1.5em;
+    }
+    :local(.textLine) {
+        color: $primary-color;
+    }
+}
+
+:local(.welcomeText) {
+    text-align: center;
+    padding: 55px;
+    line-height: 5em;
+}

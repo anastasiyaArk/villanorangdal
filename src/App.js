@@ -26,7 +26,7 @@ import configureStore, { history } from 'utils/configureStore'
 
 // Stylesheets
 import style from 'App.module.scss';
-import { Container } from 'react-bootstrap';
+
 
 const prerenderedLoadable = dynamicImport => {
   const LoadableComponent = loadable(dynamicImport);
@@ -64,30 +64,28 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <Container>
-          <NavigationBar />
-          <div className={style.container}>
-            <Switch>
-              <Route exact={true} strict={true} path="/activities/" render={() => (<Activities />)} />
-              <Route exact={true} strict={true} path="/:selectedLanguage/activities/" render={(props) => (<Activities {...props} />)} />
+            <div className={style.appContainer}>
+              <NavigationBar />
+              <Switch>
+                <Route exact={true} strict={true} path="/activities/" render={() => (<Activities />)} />
+                <Route exact={true} strict={true} path="/:selectedLanguage/activities/" render={(props) => (<Activities {...props} />)} />
 
-              <Route exact={true} strict={true} path="/hotel/" render={() => (<Hotel />)} />
-              <Route exact={true} strict={true} path="/:selectedLanguage/hotel/" render={(props) => (<Hotel {...props} />)} />
+                <Route exact={true} strict={true} path="/hotel/" render={() => (<Hotel />)} />
+                <Route exact={true} strict={true} path="/:selectedLanguage/hotel/" render={(props) => (<Hotel {...props} />)} />
 
-              <Route exact={true} strict={true} path="/gallery/" render={() => (<Gallery />)} />
-              <Route exact={true} strict={true} path="/:selectedLanguage/gallery/" render={(props) => (<Gallery {...props} />)} />
+                <Route exact={true} strict={true} path="/gallery/" render={() => (<Gallery />)} />
+                <Route exact={true} strict={true} path="/:selectedLanguage/gallery/" render={(props) => (<Gallery {...props} />)} />
 
-              <Route exact={true} strict={true} path="/booking/" render={() => (<Booking />)} />
-              <Route exact={true} strict={true} path="/:selectedLanguage/booking/" render={(props) => (<Booking {...props} />)} />
+                <Route exact={true} strict={true} path="/booking/" render={() => (<Booking />)} />
+                <Route exact={true} strict={true} path="/:selectedLanguage/booking/" render={(props) => (<Booking {...props} />)} />
 
-              <Route exact={true} strict={true} path="/:selectedLanguage/" render={(props) => (<Home {...props} />)} />
-              <Route exact={true} strict={true} path="/" render={() => (<Home />)} />
+                <Route exact={true} strict={true} path="/:selectedLanguage/" render={(props) => (<Home {...props} />)} />
+                <Route exact={true} strict={true} path="/" render={() => (<Home />)} />
 
 
-            </Switch>
-            <Footer />
-          </div>
-          </Container>
+              </Switch>
+              <Footer />
+            </div>
         </ConnectedRouter>
       </Provider>
     );

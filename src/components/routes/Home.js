@@ -1,13 +1,17 @@
 // Dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Card } from 'react-bootstrap';
 
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
 
 // Components
 import BookingForm from 'components/partials/BookingForm'
+
+// Assets
+import villaNorangdal from '../../assets/images/villaNorangdalMain.jpg';
 
 // Styles
 import style from 'components/routes/Home.module.scss'
@@ -30,17 +34,24 @@ class Home extends Component {
 
   render() {
     return (
-      <div class="card col-md-6">
-        <div class="card-body text-center">
-          <h5 class="card-title">{this.props.selectedLanguageKey === 'en' ? 'In the very heart of Sunnmørsalpene!' : 'Midt i hjertet av Sunnmørsalpene!'}</h5>
+      <div className={style.container}>
+        <Card>
+          <Card.Img src={villaNorangdal}  className={style.backgroundImage} alt="Villa Norangdal" />
+          <Card.ImgOverlay className={style.imageOverlay}>
+            <Card.Title className={style.imageOverlayText}> {this.props.selectedLanguageKey === 'en' ? 'Welcome to Villa Norangdal!' : 'Velkommen til Villa Norangdal!'}
+            <br/>
+            _______________</Card.Title>
+          </Card.ImgOverlay>
+        </Card>
+        <div className={style.welcomeText}>
+          <h5>{this.props.selectedLanguageKey === 'en' ? 'In the very heart of Sunnmørsalpene!' : 'Midt i hjertet av Sunnmørsalpene!'}</h5>
           <div><FontAwesomeIcon icon={['far', 'heart']} alt='Tripadvisor logo' /></div>
           <p class="card-text">{this.props.selectedLanguageKey === 'en' ? 'Book now a lovely stay at our hotel in the heart of Sunnmørsalpene. ' +
-           'Villa Norangdal is a perfect place to stay if you want to visit Ålesund, Geiranger, Trollstigen, Hjørundfjorden, Indre Nordfjord og Stryn. ' :
-           'Book et herlig opphold hos oss midt i Sunnmørsalpene. Villa Norangdal er perfekt som utgangspunkt for å oppleve Ålesund, Geiranger, Trollstigen, Hjørundfjorden, Indre' +
-           'Nordfjord og Stryn.'}
-           </p>
+            'Villa Norangdal is a perfect place to stay if you want to visit Ålesund, Geiranger, Trollstigen, Hjørundfjorden, Indre Nordfjord og Stryn. ' :
+            'Book et herlig opphold hos oss midt i Sunnmørsalpene. Villa Norangdal er perfekt som utgangspunkt for å oppleve Ålesund, Geiranger, Trollstigen, Hjørundfjorden, Indre' +
+            'Nordfjord og Stryn.'}
+          </p>
         </div>
-        <BookingForm/>
       </div>
     )
   }
