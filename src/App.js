@@ -26,6 +26,7 @@ import configureStore, { history } from 'utils/configureStore'
 
 // Stylesheets
 import style from 'App.module.scss';
+import { Container } from 'react-bootstrap';
 
 const prerenderedLoadable = dynamicImport => {
   const LoadableComponent = loadable(dynamicImport);
@@ -63,6 +64,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
+          <Container>
           <NavigationBar />
           <div className={style.container}>
             <Switch>
@@ -85,6 +87,7 @@ class App extends Component {
             </Switch>
             <Footer />
           </div>
+          </Container>
         </ConnectedRouter>
       </Provider>
     );

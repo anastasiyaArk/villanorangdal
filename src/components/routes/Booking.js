@@ -49,18 +49,13 @@ class Booking extends Component {
     return (
       <div><div>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
-    <h4>{this.props.selectedLanguageKey === 'en' ? 'Booking' : 'Booking'}</h4>
-    <div><FontAwesomeIcon icon={['fas', 'hotel']} alt={this.props.selectedLanguageKey === 'en' ? 'Hotel logo' : 'Hotell logo'} /></div>
+        <h4>{this.props.selectedLanguageKey === 'en' ? 'Booking' : 'Booking'}</h4>
+        <div><FontAwesomeIcon icon={['fas', 'hotel']} alt={this.props.selectedLanguageKey === 'en' ? 'Hotel logo' : 'Hotell logo'} /></div>
       </div>
         <div class="card-deck">
           <div class="card col-md-8">
-            <div class="card-body">
-              <p class="card-text">Her kan du gjøre en forespørsel om booking av hele hotellet for en periode. Vi vil svare på din
-              forespørsel så raskt som mulig.
-          <p>Vi tilbyr for tiden kun utleie av hele hotellet til en døgnpris på XXXX kr. </p>
-              </p>
-            <BookingForm/>
-            </div>
+            <BookingForm />
+
           </div>
           <div class="card col-md-4 payment-info">
             <div class="card-body">
