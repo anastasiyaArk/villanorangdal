@@ -13,11 +13,6 @@ import { getLanguageSlug } from 'actions/LanguageActions';
 import style from 'components/partials/Footer.module.scss';
 
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-        console.log(this.props); // prints out whatever is inside props
-
-    }
     render() {
         return (
             <div className={style.footer}>

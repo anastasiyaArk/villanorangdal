@@ -10,7 +10,7 @@ import { ReactComponent as NorangdalVillaLogo } from 'assets/images/logo.svg'
 import style from 'components/partials/NavigationBar.module.scss'
 
 // Actions 
-import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from '../../actions/LanguageActions';
+import { getLanguageSlug } from '../../actions/LanguageActions';
 
 
 class NavigationBar extends Component {
@@ -20,7 +20,6 @@ class NavigationBar extends Component {
     }
 
     renderLanguageSelectorButton(availableLanguages, multilingualRoutes, selectedLanguageKey) {
-        console.log(multilingualRoutes);
         const hasAvailableLanguages = availableLanguages && Object.keys(availableLanguages).length;
         const hasMultilingualRoutes = multilingualRoutes && Object.keys(multilingualRoutes).length;
         if (hasAvailableLanguages && hasMultilingualRoutes) {

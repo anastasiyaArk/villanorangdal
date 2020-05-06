@@ -65,7 +65,7 @@ class Activities extends Component {
           'Geiranger/Trollstigen, Hjørundfjorden and Indre Nordfjord/Stryn areas.' : 'Villa Norangdal er perfekt som utgangspunkt for å oppleve Ålesund, Geiranger, Trollstigen, Hjørundfjorden, ' +
           'Indre Nordfjord og Stryn.'}</p>
         </div>
-        <div><Image src={activity} className={style.hotelImage} alt={this.props.selectedLanguageKey === 'en' ? 'Activities' : 'Aktiviteter'} /></div>
+        <div><Image src={activity} className={style.activityImage} alt={this.props.selectedLanguageKey === 'en' ? 'Activities' : 'Aktiviteter'} /></div>
         <div className={style.mainText}>
         <p>{this.props.selectedLanguageKey === 'en' ? 'For outings we help you connect with professional guides for hiking, skiing, biking, ' +
           'kayaking, climbing, diving – any kind of outdoor activity you can think of. If you are not tempted by mountains and fjords, we will provide you the best tips for ' +

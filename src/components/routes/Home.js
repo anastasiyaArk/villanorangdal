@@ -7,9 +7,6 @@ import { Card } from 'react-bootstrap';
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
 
-// Components
-import BookingForm from 'components/partials/BookingForm'
-
 // Assets
 import villaNorangdal from '../../assets/images/villaNorangdalMain.jpg';
 

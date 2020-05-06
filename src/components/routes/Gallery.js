@@ -9,7 +9,6 @@ import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } 
 
 // Components
 import Breadcrumbs from 'components/partials/Breadcrumbs';
-import CarouselThumbnail from 'components/partials/CarouselThumbnail';
 
 class Gallery extends Component {
     constructor(props) {
@@ -57,7 +56,6 @@ class Gallery extends Component {
         return (
             <div>
                 <Breadcrumbs breadcrumbs={breadcrumbs} />
-                <CarouselThumbnail />
             </div>
         )
     }
