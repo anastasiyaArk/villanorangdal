@@ -48,8 +48,8 @@ class Footer extends Component {
                             </div>
                         </div>
                         <div className={style.grid}>
-                            <a href="http://www.olavsrosa.no" target="_blank">
-                                <img src={LogoOlavsRose} height="30px;" />
+                            <a href="http://www.olavsrosa.no" target="_blank" rel="noopener noreferrer">
+                                <img src={LogoOlavsRose} height="30px;" alt='Olavs rose'/>
                             </a>
                         </div>
                         <div className={style.grid}>

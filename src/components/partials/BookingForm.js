@@ -1,7 +1,8 @@
 // Dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Form, FormGroup, FormLabel, Button} from 'react-bootstrap';
+import { Form, FormGroup, FormLabel, Button, Row, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
@@ -21,39 +22,49 @@ class BookingForm extends Component {
                 </div>
                 <Form className={style.formContainer}>
 
-                    <FormGroup>
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'From' : 'Fra dato'}</FormLabel>
-                        <Form.Control type="date" />
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'To' : 'Til dato'}</FormLabel>
-                        <Form.Control type="date" />
+                    <FormGroup className={style.formGroup}>
+                        <Row>
+                            <Col>
+                                <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'From' : 'Fra dato'}</FormLabel>
+                                <Form.Control type="date" />
+                            </Col>
+                            <Col>
+                                <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'To' : 'Til dato'}</FormLabel>
+                                <Form.Control type="date" />
+                            </Col>
+                        </Row>
                     </FormGroup>
 
-                    <FormGroup>
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'First name' : 'Fornavn'}</FormLabel>
+                    <FormGroup className={style.formGroup}>
+                        <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'First name' : 'Fornavn'}</FormLabel>
                         <Form.Control type="text" placeholder={this.props.selectedLanguageKey === 'en' ? 'First name' : 'Fornavn'} />
                     </FormGroup>
 
-                    <FormGroup>
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Second name' : 'Etternavn'}</FormLabel>
+                    <FormGroup className={style.formGroup}>
+                        <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'Second name' : 'Etternavn'}</FormLabel>
                         <Form.Control type="text" placeholder={this.props.selectedLanguageKey === 'en' ? 'Second name' : 'Etternavn'} />
                     </FormGroup>
 
-                    <FormGroup>
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Email' : 'E-post'}</FormLabel>
+                    <FormGroup className={style.formGroup}>
+                        <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'Email' : 'E-post'}</FormLabel>
                         <Form.Control type="email" placeholder={this.props.selectedLanguageKey === 'en' ? 'Email' : 'E-post'} />
                     </FormGroup>
 
-                    <FormGroup>
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'}</FormLabel>
+                    <FormGroup className={style.formGroup}>
+                        <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'}</FormLabel>
                         <Form.Control type="text" placeholder={this.props.selectedLanguageKey === 'en' ? 'Telephone' : 'Telefonnummer'} />
                     </FormGroup>
 
-                    <FormGroup>
-                        <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'}</FormLabel>
+                    <FormGroup className={style.formGroup}>
+                        <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'}</FormLabel>
                         <Form.Control type="textarea" placeholder={this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'} />
-                    </FormGroup>
+                  
 
-                    <Button variant="primary" type="submit">{this.selectedLanguageKey === 'en' ? 'Send request' : 'Send forespørsel'}</Button>
+                    <Button className={style.button} variant="primary" type="submit">
+                        <FontAwesomeIcon icon={['fas', 'envelope']} alt='Send' />
+                        {this.selectedLanguageKey === 'en' ? '  Send request' : '  Send forespørsel'}
+                    </Button>
+                    </FormGroup>
                 </Form>
             </div>
         )

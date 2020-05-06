@@ -1,5 +1,35 @@
 @import "../../style/abstracts/all";
 
-:local(.formContainer){
+:local(.formContainer) {
     background-color: #f5f3e9;
+}
+
+:local(.formGroup) {
+    width: 50%;
+    margin: 15px;
+    margin: auto;
+    padding: 8px;
+    :local(.label) {
+        font-weight: bold;
+    }
+}
+
+:local(.button) {
+    background-color: $primary-color;
+    color: $primary-text-color;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 500;
+    border-radius: 0;
+    border-color: $primary-color;
+
+    &:focus,
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-color: $primary-color;
+    }
+
+    &:active:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 }

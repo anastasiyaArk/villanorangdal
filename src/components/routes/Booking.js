@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CardDeck, Card } from 'react-bootstrap';
+import { CardDeck, Card, Row, Col } from 'react-bootstrap';
 
 
 // Components
@@ -58,29 +58,30 @@ class Booking extends Component {
           <p></p>
         </div>
         <CardDeck>
-          <Card>
-            <BookingForm />
-          </Card>
-          <Card>
-            <Card.Body>
-              <Card.Text>
-                <span>OBS: Dette er kun eksempeltekst/forslag </span><br /><br />
-                Når du har fått svar på din forespørsel ber vi om at du bekrefter bestillingen.<br />
-
-                <h6>Betaling</h6>
-                <span>Ved bestilling mer enn 30 dager før ankomst fakturerer vi 25% av beløpet som depositum. Dette skal betales innen en uke. Det resterende beløpet betales 30 dager før ankomst.
-                <br /><br />
-                  Ved bestilling nærmere enn 30 dager til ankomst forfaller hele leiebeløpet til betaling ved bestilling.</span>
-
-                <h6>Avbestilling</h6>
-                <span>Ved avbestilling mer enn 30 dager før ankomst vil innbetalt depositum, minus ett avbestillingsgebyr på kr 300, bli tilbakebetalt.
+          <Row>
+            <Col>
+              <Card>
+                <BookingForm />
+              </Card>
+            </Col>
+            <Col md={4}>
+            <Card>
+              <Card.Body>
+                <Card.Title>OBS: Dette er kun eksempeltekst/forslag </Card.Title>
+                <Card.Text>Når du har fått svar på din forespørsel ber vi om at du bekrefter bestillingen.</Card.Text>
+                <Card.Title>Betaling</Card.Title>
+                <Card.Text>Ved bestilling mer enn 30 dager før ankomst fakturerer vi 25% av beløpet som depositum. Dette skal betales innen en uke. Det resterende beløpet betales 30 dager før ankomst.
+                      Ved bestilling nærmere enn 30 dager til ankomst forfaller hele leiebeløpet til betaling ved bestilling.</Card.Text>
+                <Card.Title>Avbestilling</Card.Title>
+                <Card.Text>Ved avbestilling mer enn 30 dager før ankomst vil innbetalt depositum, minus ett avbestillingsgebyr på kr 300, bli tilbakebetalt.
                   Ved avbestilling senere refunderes ikke det innbetalte beløpet.<br /><br />
-                  Vil tilbyr ingen avbestillingsforsikring og ber om at gjestene ordner dette med sitt eget forsikringsselskap.</span>
-              </Card.Text>
-            </Card.Body>
-          </Card>
+                  Vil tilbyr ingen avbestillingsforsikring og ber om at gjestene ordner dette med sitt eget forsikringsselskap.</Card.Text>
+              </Card.Body>
+            </Card>
+            </Col>
+          </Row>
         </CardDeck>
-      </div>
+      </div >
     )
   }
 }
