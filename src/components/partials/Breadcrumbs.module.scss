@@ -1,7 +1,9 @@
+@import "../../style/abstracts/all";
+
 :local(.breadcrumbs) {
     ul {
       list-style: none;
-      padding: 0;
+      padding: 15px 10px;
       margin: 0;
   
       li {
@@ -9,13 +11,13 @@
   
         a,
         span {
-          color: rgba(0, 0, 0, 0.54);
+          color: black;
         }
   
         &:last-child {
           a,
           span {
-            color: rgba(0, 0, 0, 0.87);
+            color: rgba(0, 0, 0, 0.75);
           }
         }
   
@@ -23,7 +25,9 @@
           display: inline-block;
           content: ' | ';
           margin: 0 8px;
-          color: rgba(0, 0, 0, 0.54);
+          color: $primary-color;
+          font-weight: bold;
+
         }
       }
     }
