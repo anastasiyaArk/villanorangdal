@@ -6,6 +6,9 @@ import {Form, FormGroup, FormLabel, Button} from 'react-bootstrap';
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
 
+// Styles
+import style from 'components/partials/BookingForm.module.scss'
+
 class BookingForm extends Component {
     render() {
         return (
@@ -16,7 +19,7 @@ class BookingForm extends Component {
                         'forespørsel så raskt som mulig.'}</p>
                     <p>{this.props.selectedLanguageKey === 'en' ? 'At this moment we propose rental only for the whole hotel for kr XXXX' : 'Vi tilbyr for tiden kun utleie av hele hotellet til en døgnpris på XXXX kr. '}</p>
                 </div>
-                <Form>
+                <Form className={style.formContainer}>
 
                     <FormGroup>
                         <FormLabel>{this.props.selectedLanguageKey === 'en' ? 'From' : 'Fra dato'}</FormLabel>
