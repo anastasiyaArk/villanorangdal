@@ -54,8 +54,8 @@ class NavigationBar extends Component {
                 </Link>
                 <ul className={style.navigationBarLinks}>
                     <li>
-                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}hotel/`} activeClassName={style.activeLink} title={this.props.selectedLanguageKey === 'en' ? 'Hotell' : 'Hotel'}>
-                            {this.props.selectedLanguageKey === 'en' ? 'Hotellet' : 'Hotell'}
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}hotel/`} activeClassName={style.activeLink} title={this.props.selectedLanguageKey === 'en' ? 'Hotellet' : 'Hotellet'}>
+                            {this.props.selectedLanguageKey === 'en' ? 'Hotel' : 'Hotellet'}
                         </NavLink>
                     </li>
                     <li>
