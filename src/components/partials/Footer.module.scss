@@ -1,79 +1,47 @@
 @import "../../style/abstracts/all";
 
-:local(.footer){
-    background-color: $dark-background;
-    
-    :local(.contentSection) {
-        max-width: 1200px;
-        padding: 16px;
-        margin: auto;
-        flex: 1;
-        color: $dark-background-text-color;
-    
-        :local(.map) {
-          margin: 0;
-    
-          img {
-            width: 100%;
-          }
-        }
-    
-        :local(.grid) {
-          @media (min-width: $screen-md) {
-            display: flex;
-            
-          }
-    
-          :local(.textSection) {
-            @media (min-width: $screen-md) {
-              flex: 1;
-            }
-          }
-    
-          :local(.mapSection) {
-            @media (min-width: $screen-md) {
-              flex: 2;
-            }
-          }
-        }
-      }
-}
-
-:local(.socialMediaLinks) {
+:local(.footer) {
+  background-color: $dark-background;
+  color: $dark-background-text-color;
+  padding: 50px;
+  :local(.contactInfo) {
     text-align: center;
-  
-    a {
-      display: block;
-      background-color: #555;
-      color: #fff;
-      font-size: 20px;
-      line-height: 32px;
-      width: 32px;
-      height: 32px;
+  }
+  :local(.container) {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    :local(.socialMediaLinks) {
       text-align: center;
-      border-radius: 50%;
-      margin: 12px;
-      &:hover,
-      &:focus {
-        color: #fff;
-      }
-  
-      &:local(.facebook) {
+      a {
+        display: block;
+        background-color: $primary-color;
+        color: $primary-text-color;
+        font-size: 20px;
+        line-height: 32px;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        border-radius: 50%;
+        margin: 10px auto;
         &:hover,
         &:focus {
-          background-color: #4267b2;
+          color: $dark-background-text-color;
         }
       }
-  
-      &:local(.instagram) {
-        &:hover,
-        &:focus {
-          background: #b900b4;
-          background: -moz-linear-gradient(left, #b900b4 0%, #f50000 100%);
-          background: -webkit-linear-gradient(left, #b900b4 0%,#f50000 100%);
-          background: linear-gradient(to right, #b900b4 0%,#f50000 100%);
-        }
-      }
-
+    }
+    :local(.olavsRoseImg) {
+      margin: auto;
     }
   }
+  
+  :local(.adminContainer) {
+    color: $dark-background-text-color;
+    text-align: right;
+    padding-top: 150px;
+    a {
+      color: $dark-background-text-color;
+    }
+  }
+
+}
