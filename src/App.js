@@ -14,7 +14,7 @@ import {
   faTripadvisor
 } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faSkiingNordic, faHotel, faBed, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faSkiingNordic, faHotel, faBed, faEnvelope, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 
 // Components
@@ -26,6 +26,7 @@ import configureStore, { history } from 'utils/configureStore'
 
 // Stylesheets
 import style from 'App.module.scss';
+import HellesyltBar from './components/routes/HellesyltBar';
 
 
 const prerenderedLoadable = dynamicImport => {
@@ -54,7 +55,7 @@ WebFont.load({
   }
 });
 
-library.add(faFacebookF, faInstagram, faTripadvisor, faHeart, faSkiingNordic, faHotel, faBed, faEnvelope)
+library.add(faFacebookF, faInstagram, faTripadvisor, faHeart, faSkiingNordic, faHotel, faBed, faEnvelope, faCoffee)
 
 const store = configureStore(preloadedState || initialState)
 
@@ -64,28 +65,29 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-            <div className={style.appContainer}>
-              <NavigationBar />
-              <Switch>
-                <Route exact={true} strict={true} path="/activities/" render={() => (<Activities />)} />
-                <Route exact={true} strict={true} path="/:selectedLanguage/activities/" render={(props) => (<Activities {...props} />)} />
+          <div className={style.appContainer}>
+            <NavigationBar />
+            <Switch>
+              <Route exact={true} strict={true} path="/activities/" render={() => (<Activities />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/activities/" render={(props) => (<Activities {...props} />)} />
 
-                <Route exact={true} strict={true} path="/hotel/" render={() => (<Hotel />)} />
-                <Route exact={true} strict={true} path="/:selectedLanguage/hotel/" render={(props) => (<Hotel {...props} />)} />
+              <Route exact={true} strict={true} path="/hotel/" render={() => (<Hotel />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/hotel/" render={(props) => (<Hotel {...props} />)} />
 
-                <Route exact={true} strict={true} path="/gallery/" render={() => (<Gallery />)} />
-                <Route exact={true} strict={true} path="/:selectedLanguage/gallery/" render={(props) => (<Gallery {...props} />)} />
+              <Route exact={true} strict={true} path="/gallery/" render={() => (<Gallery />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/gallery/" render={(props) => (<Gallery {...props} />)} />
 
-                <Route exact={true} strict={true} path="/booking/" render={() => (<Booking />)} />
-                <Route exact={true} strict={true} path="/:selectedLanguage/booking/" render={(props) => (<Booking {...props} />)} />
+              <Route exact={true} strict={true} path="/booking/" render={() => (<Booking />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/booking/" render={(props) => (<Booking {...props} />)} />
 
-                <Route exact={true} strict={true} path="/:selectedLanguage/" render={(props) => (<Home {...props} />)} />
-                <Route exact={true} strict={true} path="/" render={() => (<Home />)} />
+              <Route exact={true} strict={true} path="/hellesylt/" render={() => (<HellesyltBar />)} />
+              <Route exact={true} strict={true} path="/:selectedLanguage/hellesylt/" render={(props) => (<HellesyltBar {...props} />)} />
 
-
-              </Switch>
-              <Footer />
-            </div>
+              <Route exact={true} strict={true} path="/:selectedLanguage/" render={(props) => (<Home {...props} />)} />
+              <Route exact={true} strict={true} path="/" render={() => (<Home />)} />
+            </Switch>
+            <Footer />
+          </div>
         </ConnectedRouter>
       </Provider>
     );

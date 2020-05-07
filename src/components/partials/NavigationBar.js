@@ -72,6 +72,11 @@ class NavigationBar extends Component {
                             {this.props.selectedLanguageKey === 'en' ? 'Booking' : 'Booking'}
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}hellesylt/`} activeClassName={style.activeLink} title='Hellesylt Boutique Bar'>
+                            {this.props.selectedLanguageKey === 'en' ? 'Hellesylt Boutique & Bar' : 'Hellesylt Boutique & Bar'}
+                        </NavLink>
+                    </li>
                 </ul>
                 <div className={style.languageSelectorListContainer}>
                     <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorList}`}>

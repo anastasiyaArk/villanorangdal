@@ -1,0 +1,36 @@
+@import "../../style/abstracts/all";
+
+:local(.container) {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    :local(.hellesyltImage) {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        margin: auto;
+    }
+
+    :local(.header) {
+        line-height: 5px;
+        text-align: center;
+        margin: auto;
+        width: 35%;
+        & * {
+            margin: 10px;
+        }
+    }
+
+    :local(.mainText) {
+        width: 55%;
+        margin: auto;
+        margin-bottom: 40px;
+        & * {
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-indent: 20px;
+            text-align: justify;
+        }
+    }
+}
