@@ -60,12 +60,12 @@ class Booking extends Component {
         <CardDeck>
           <Row>
             <Col>
-              <Card>
+              <Card className={style.card}>
                 <BookingForm />
               </Card>
             </Col>
             <Col md={4}>
-            <Card>
+            <Card className={style.card}>
               <Card.Body>
                 <Card.Title>OBS: Dette er kun eksempeltekst/forslag </Card.Title>
                 <Card.Text>Når du har fått svar på din forespørsel ber vi om at du bekrefter bestillingen.</Card.Text>

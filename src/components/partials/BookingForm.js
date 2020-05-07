@@ -58,13 +58,12 @@ class BookingForm extends Component {
                     <FormGroup className={style.formGroup}>
                         <FormLabel className={style.label}>{this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'}</FormLabel>
                         <Form.Control type="textarea" placeholder={this.props.selectedLanguageKey === 'en' ? 'Comment' : 'Kommentar'} />
-                  
+                    </FormGroup>
 
                     <Button className={style.button} variant="primary" type="submit">
                         <FontAwesomeIcon icon={['fas', 'envelope']} alt='Send' />
                         {this.selectedLanguageKey === 'en' ? '  Send request' : '  Send forespørsel'}
                     </Button>
-                    </FormGroup>
                 </Form>
             </div>
         )
