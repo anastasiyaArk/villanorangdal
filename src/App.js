@@ -43,7 +43,7 @@ const Hotel = prerenderedLoadable(() => import("./components/routes/Hotel"));
 const Activities = prerenderedLoadable(() => import("./components/routes/Activities"));
 const Gallery = prerenderedLoadable(() => import("./components/routes/Gallery"));
 const Booking = prerenderedLoadable(() => import("./components/routes/Booking"));
-//const NotFound = prerenderedLoadable(() => import("./components/routes/NotFound"));
+const NotFound = prerenderedLoadable(() => import("./components/routes/NotFound"));
 
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__PRELOADED_STATE__;
@@ -85,6 +85,8 @@ class App extends Component {
 
               <Route exact={true} strict={true} path="/:selectedLanguage/" render={(props) => (<Home {...props} />)} />
               <Route exact={true} strict={true} path="/" render={() => (<Home />)} />
+              <Route key={"/404.html"} component={NotFound} />
+              <Route render={() => (<NotFound />)} />
             </Switch>
             <Footer />
           </div>
