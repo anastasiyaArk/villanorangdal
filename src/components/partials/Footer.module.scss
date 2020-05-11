@@ -2,15 +2,19 @@
 
 :local(.footer) {
   background-color: $dark-background;
-  color: $dark-background-text-color;
+  color: $primary-color;
   padding: 50px;
+  display: inline-flexbox;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
   :local(.contactInfo) {
-    text-align: center;
+    text-align: left;
   }
   :local(.container) {
     max-width: 1200px;
     margin: auto;
-    overflow: hidden;
     :local(.socialMediaLinks) {
       text-align: center;
       a {
@@ -26,7 +30,7 @@
         margin: 10px auto;
         &:hover,
         &:focus {
-          color: $dark-background-text-color;
+          color: $primary-color;
         }
       }
     }
@@ -36,11 +40,12 @@
   }
   
   :local(.adminContainer) {
-    color: $dark-background-text-color;
+    color: $primary-color;
     text-align: right;
     padding-top: 150px;
+    flex: 1;
     a {
-      color: $dark-background-text-color;
+      color: $primary-color;
     }
   }
 

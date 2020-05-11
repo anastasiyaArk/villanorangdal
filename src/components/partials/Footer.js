@@ -25,10 +25,22 @@ class Footer extends Component {
                                 : 'Kontakt oss'
                         }</h5>
                         <div>Villa Norangdal</div>
-                        <br/>
+                        <br />
                         <div>6218 Hellesylt</div>
-                        <div>70 26 10 84</div>
-                        <div>mail@norangdal.com</div>
+                        <div>{this.props.selectedLanguageKey === 'en' ? 'Telephone: ' : 'Telefon: '} 70 26 10 84</div>
+                        <div>{this.props.selectedLanguageKey === 'en' ? 'E-mail: ' : 'E-post: '} mail@norangdal.com</div>
+                    </Col>
+                    <Col className={style.contactInfo}>
+                        <h5>{
+                            this.props.selectedLanguageKey === 'en'
+                                ? 'Contact Hellesylt'
+                                : 'Kontakt Hellesylt'
+                        }</h5>
+                        <div>Gata 29</div>
+                        <div>6218 Hellesylt</div>
+                        <br />
+                        <div>{this.props.selectedLanguageKey === 'en' ? 'Telephone: ' : 'Telefon: '} 40 51 65 35</div>
+                        <div>{this.props.selectedLanguageKey === 'en' ? 'E-mail: ' : 'E-post: '} mail@norangdal.com</div>
                     </Col>
                     <Col className={style.socialMediaLinks} >
                         <h5>{
