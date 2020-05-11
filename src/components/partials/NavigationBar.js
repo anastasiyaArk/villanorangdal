@@ -67,17 +67,15 @@ class NavigationBar extends Component {
     }
 
     hideSidebar() {
-        this.setState({hidingSidebar: true});
-        setTimeout(function() {
-          this.setState({showSidebar: false, hidingSidebar: false});
+        this.setState({ hidingSidebar: true });
+        setTimeout(function () {
+            this.setState({ showSidebar: false, hidingSidebar: false });
         }.bind(this), 225);
-      }
+    }
 
     setSidebarWrapperRef(node) {
         this.sidebarWrapperRef = node;
     }
-
-
 
     renderLanguageSelectorButton(availableLanguages, multilingualRoutes, selectedLanguageKey) {
         const hasAvailableLanguages = availableLanguages && Object.keys(availableLanguages).length;
@@ -149,11 +147,7 @@ class NavigationBar extends Component {
                                     </NavLink>
                                 </li>
                             </ul>
-                            <div className={style.languageSelectorListContainer}>
-                                <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorList}`}>
-                                    {this.renderLanguageSelectorButton(this.props.availableLanguages, this.props.multilingualRoutes, this.props.selectedLanguageKey)}
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -185,6 +179,12 @@ class NavigationBar extends Component {
                             </NavLink>
                         </li>
                     </ul>
+
+                </div>
+                <div className={style.languageSelectorListContainer}>
+                    <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorList}`}>
+                        {this.renderLanguageSelectorButton(this.props.availableLanguages, this.props.multilingualRoutes, this.props.selectedLanguageKey)}
+                    </div>
                 </div>
             </div>
         )

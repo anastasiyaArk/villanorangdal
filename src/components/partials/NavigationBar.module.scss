@@ -83,18 +83,14 @@
         &:active {
             background-color: rgba(0, 0, 0, 0.38);
         }
-
-       
+     
     }
 }
 }
 
-
-
-
-
 :local(.languageSelectorListContainer) {
-    width: 78px;
+    width: 100%;
+    float: right;
     @media (min-width: $screen-sm) {
         width: 145px;
     }
