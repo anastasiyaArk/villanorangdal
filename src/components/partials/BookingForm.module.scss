@@ -3,34 +3,23 @@
 :local(.formContainer) {
     background-color: #f5f3e9;
     justify-content: center;
+    margin: 30px 0;
+    padding: 20px 0;
 }
 
 :local(.formGroup) {
     width: 50%;
     margin: auto;
     padding: 8px;
-    :local(.label) {
-        font-weight: bold;
-    }
 }
 
-:local(.button) {
-    background-color: $primary-color;
-    color: $primary-text-color;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    font-weight: 500;
-    border-radius: 0;
-    border-color: $primary-color;
-    margin: 15px auto;
-
-    &:focus,
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-color: $primary-color;
-    }
-
-    &:active:focus {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
+:local(.label) {
+    font-weight: bold;
 }
+
+:local(.formGroupInline){
+    display: inline;
+    margin: auto;
+}
+
+
