@@ -13,6 +13,8 @@ import villaNorangdal from '../../assets/images/villaNorangdalMain.jpg';
 // Styles
 import style from 'components/routes/Home.module.scss'
 
+// Components
+import RoughLuxe from 'components/partials/RoughLuxe';
 
 class Home extends Component {
   initLanguage() {
@@ -49,6 +51,7 @@ class Home extends Component {
             'Nordfjord og Stryn.'}
           </p>
         </div>
+        <RoughLuxe />
       </div>
     )
   }
