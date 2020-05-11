@@ -2,11 +2,11 @@
 
 :local(.formContainer) {
     background-color: #f5f3e9;
+    justify-content: center;
 }
 
 :local(.formGroup) {
     width: 50%;
-    margin: 15px;
     margin: auto;
     padding: 8px;
     :local(.label) {
@@ -22,6 +22,7 @@
     font-weight: 500;
     border-radius: 0;
     border-color: $primary-color;
+    margin: 15px auto;
 
     &:focus,
     &:hover {

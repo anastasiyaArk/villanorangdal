@@ -14,7 +14,7 @@ import {
   faTripadvisor
 } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faSkiingNordic, faHotel, faBed, faEnvelope, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faSkiingNordic, faHotel, faBed, faEnvelope, faCoffee, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons';
 
 
 // Components
@@ -55,7 +55,7 @@ WebFont.load({
   }
 });
 
-library.add(faFacebookF, faInstagram, faTripadvisor, faHeart, faSkiingNordic, faHotel, faBed, faEnvelope, faCoffee)
+library.add(faFacebookF, faInstagram, faTripadvisor, faHeart, faSkiingNordic, faHotel, faBed, faEnvelope, faCoffee, faLongArrowAltRight)
 
 const store = configureStore(preloadedState || initialState)
 

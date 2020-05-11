@@ -3,26 +3,23 @@
 :local(.container) {
     max-width: 1200px;
     margin: auto;
-    overflow: hidden;
-   
+    :local(.callToAction) {
+        text-align: center;
+        span{
+            padding: 5px 5px;
+        }
+    }
 }
 
-:local(.imageOverlay) {
-    background-color: rgba(97, 96, 93, 0.35);
-    display: flex;
-    position: absolute;
-    padding: 16px 24px;
-
-    :local(.imageOverlayText) {
-        line-height: 1.5em;
-    }
-    :local(.textLine) {
-        color: $primary-color;
-    }
+:local(.backgroundImage){
+    width: 100%;
+    position: relative;
 }
 
 :local(.welcomeText) {
     text-align: center;
-    padding: 55px;
+    padding: 35px;
     line-height: 5em;
+    width: 40%;
+    margin: auto;
 }
