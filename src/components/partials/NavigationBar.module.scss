@@ -16,7 +16,7 @@
     img {
         width: 30px;
         object-fit: cover;
-        position: fixed;
+        position: relative;
         top: 15px;
         left: 10px;
       }
@@ -57,7 +57,7 @@
 
     :local(.menuButton) {
         line-height: 64px;
-        position: fixed;
+        position: relative;
         left: 40px;
         top: -5px;
         :local(.menuIcon) {
