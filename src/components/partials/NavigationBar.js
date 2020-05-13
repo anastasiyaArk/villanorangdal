@@ -108,9 +108,7 @@ class NavigationBar extends Component {
         return (
             <div className={style.navigationBar}>
                 <Link to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}`} className={style.homeLink} aria-label='Link Villa Norangdal home page' title='Link Villa Noranngdal home page'>
-                   
-                        <img src={NorangdalVillaLogo} alt="Villa Norangdal logo"  />
-                  
+                    <img src={NorangdalVillaLogo} alt="Villa Norangdal logo" />
                 </Link>
                 <span onClick={() => this.handleShowSidebarClick()} className={style.menuButton}>
                     <MenuIcon className={style.menuIcon} />
