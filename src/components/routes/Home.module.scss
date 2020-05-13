@@ -1,8 +1,8 @@
 @import "../../style/abstracts/all";
 
 :local(.container) {
-    max-width: 1200px;
-    margin: auto;
+    min-width: 100%;
+    padding: 0;
     :local(.callToAction) {
         text-align: center;
         span{
@@ -13,13 +13,18 @@
 
 :local(.backgroundImage){
     width: 100%;
-    position: relative;
+    height: 100%;
+    border-radius: 0;
 }
 
 :local(.welcomeText) {
     text-align: center;
     padding: 35px;
     line-height: 5em;
-    width: 40%;
+    width: 70%;
     margin: auto;
+    h5{
+        text-align: center;
+        width: 100%;
+    }
 }
