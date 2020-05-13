@@ -1,14 +1,14 @@
 // Dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { Link, Redirect } from 'react-router-dom';
 
 // Actions
 import { getLanguageSlug, updateMultilingualRoutes, updateSelectedLanguageKey } from 'actions/LanguageActions';
 
 // Components
 import Breadcrumbs from 'components/partials/Breadcrumbs';
+import Carousel from 'components/partials/Carousel';
+
 
 class Gallery extends Component {
     constructor(props) {
@@ -56,6 +56,7 @@ class Gallery extends Component {
         return (
             <div>
                 <Breadcrumbs breadcrumbs={breadcrumbs} />
+                <Carousel />
             </div>
         )
     }
