@@ -34,3 +34,34 @@
         }
     }
 }
+
+:local(.activityCard) {
+    width: 18rem;
+    margin: 40px 20px;
+    background-color: $golden-color-background;
+    border-style: none;
+    border-radius: 0;
+    :local(.activityImage) {
+        width: inherit;
+        height: 310px;
+        object-fit: cover;
+        padding: 0 0;
+    }
+    :local(.activityCardTitle){
+        margin-top: 5px;
+    }
+    a {
+        color: $primary-text-color;
+        &:focus,
+        &:hover {
+          color: $primary-color;
+          text-decoration: none;
+          }
+    }
+}
+
+:local(.activityCardContainer) {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
