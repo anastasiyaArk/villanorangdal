@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Image } from 'react-bootstrap';
+
 
 // Assets
-import { ReactComponent as NorangdalVillaLogo } from 'assets/images/logo.svg'
+import NorangdalVillaLogo from 'assets/images/logo.png'
 import { ReactComponent as MenuIcon } from 'assets/images/menuIcon.svg'
 
 
@@ -105,10 +107,10 @@ class NavigationBar extends Component {
 
         return (
             <div className={style.navigationBar}>
-                <Link to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}`} aria-label='Link Villa Norangdal home page' title='Link Villa Noranngdal home page'>
-                    <span className={style.appLogo}>
-                        <NorangdalVillaLogo alt="Villa Norangdal logo" width="30" height="40" />
-                    </span>
+                <Link to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}`} className={style.homeLink} aria-label='Link Villa Norangdal home page' title='Link Villa Noranngdal home page'>
+                   
+                        <img src={NorangdalVillaLogo} alt="Villa Norangdal logo"  />
+                  
                 </Link>
                 <span onClick={() => this.handleShowSidebarClick()} className={style.menuButton}>
                     <MenuIcon className={style.menuIcon} />
@@ -181,10 +183,8 @@ class NavigationBar extends Component {
                     </ul>
 
                 </div>
-                <div className={style.languageSelectorListContainer}>
-                    <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorList}`}>
-                        {this.renderLanguageSelectorButton(this.props.availableLanguages, this.props.multilingualRoutes, this.props.selectedLanguageKey)}
-                    </div>
+                <div ref={this.setLanguageSelectorListWrapperRef} className={`${style.languageSelectorListContainer}`}>
+                    {this.renderLanguageSelectorButton(this.props.availableLanguages, this.props.multilingualRoutes, this.props.selectedLanguageKey)}
                 </div>
             </div>
         )
