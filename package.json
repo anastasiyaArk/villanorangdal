@@ -12,7 +12,7 @@
     "@loadable/component": "^5.12.0",
     "bootstrap": "^4.4.1",
     "connected-react-router": "^6.8.0",
-    "font-awesome": "^4.7.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
@@ -25,13 +25,9 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.1.0",
-    "webfontloader": "^1.6.28"
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/plugin-proposal-class-properties": "^7.7.0",
-    "node-sass": "^4.14.0",
     "parcel-bundler": "^1.12.4"
   },
   "scripts": {
