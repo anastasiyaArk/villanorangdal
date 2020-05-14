@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Image } from 'react-bootstrap';
 
 
 // Assets
-import NorangdalVillaLogo from 'assets/images/logo.png'
-import { ReactComponent as MenuIcon } from 'assets/images/menuIcon.svg'
+import NorangdalVillaLogo from 'assets/images/logo.png';
+import { ReactComponent as MenuIcon } from 'assets/images/menuIcon.svg';
+import GlobalFonts from '../../fonts/fonts';
 
 
 // Styles
@@ -107,6 +107,7 @@ class NavigationBar extends Component {
 
         return (
             <div className={style.navigationBar}>
+                <GlobalFonts/>
                 <Link to={`/${this.props.getLanguageSlug(this.props.selectedLanguageKey)}`} className={style.homeLink} aria-label='Link Villa Norangdal home page' title='Link Villa Noranngdal home page'>
                     <img src={NorangdalVillaLogo} alt="Villa Norangdal logo" />
                 </Link>

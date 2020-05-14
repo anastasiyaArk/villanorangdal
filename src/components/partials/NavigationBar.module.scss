@@ -8,7 +8,7 @@
     height: 56px;
     display: flex;
     justify-content: space-between;
-
+    font-family: "Neutra Light";
     :local(.homeLink) {
         img {
             width: 30px;
@@ -21,7 +21,6 @@
 
     :local(.navigationBarLinks) {
         margin: auto;
-        padding-left: 0;
         @media (max-width: $screen-sm) {
             display: none;
         }
@@ -132,18 +131,15 @@
 
         :local(.sidebarContentHeader) {
             height: 56px;
-            
+
             @media (min-width: $screen-sm) {
                 height: 64px;
-
             }
         }
 
         :local(.sidebarLinks) {
             padding: 0;
             margin: auto;
-
-          
         }
     }
 
